@@ -4,7 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Edit Product</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Edit Product</h1>
+    <form action="/products/<%= product._id%>?_method=PUT" method="POST">
+      <label for="name">Product Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Product Name"
+        value="<%= product.name%>"
+      />
+      <label for="price">Price (Unit)</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        placeholder="Price"
+        value="<%= product.price%>"
+      />
+      <label for="category">Select Category</label>
+      <select name="category" id="category">
+        <option value="fruit" <%=product.category === 'fruit' ? 'selected': ""%>>Fruit</option>
+        <option value="vegetable" <%=product.category === 'vegetable' ? 'selected': ""%>>Vegetable</option>
+        <option value="dairy" <%=product.category === 'dairy' ? 'selected': ""%>>Dairy</option>
+      </select>
+      <button>Submit</button>
+    </form>
+  </body>
 </html>
