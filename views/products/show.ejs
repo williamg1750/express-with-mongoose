@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1><%= product.name%> <b><%= product.price%></h1>
-      <h2><%= product.category%></h2>
+      <h2><a href="/products?category=<%= product.category%>"><%= product.category%></a></h2>
 
       <a href="/products">All products</a>
       <a href="/products/<%= product._id%>/edit">edit product</a>
